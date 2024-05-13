@@ -22,10 +22,16 @@ def escolha_servico(): #Função para escolher o serviço
     print('ICO - IMPRESSÃO COLORIDA')
     print('IPB - IMPRESSÃO PRETO E BRANCO')
     print('FOT - FOTOCOPIA')
-    servico = input('')
+    servico = input('>>')
     while servico != 'DIG' and servico != 'ICO' and servico != 'IPB' and servico != 'FOT': #Verificando se o serviço é válido
         print('Escolha inválida, entre com o tipo de serviço novamente')
-        servico = input('')
+        print('')
+        print('Entre com o tipo de serviço desejado!')
+        print('DIG - DIGITALIZAÇÃO')
+        print('ICO - IMPRESSÃO COLORIDA')
+        print('IPB - IMPRESSÃO PRETO E BRANCO')
+        print('FOT - FOTOCOPIA')
+        servico = input('>>')
     if servico == 'DIG': #Verificando se o serviço é DIG
         return 1.10
     if servico == 'ICO': #Verificando se o serviço é ICO
@@ -38,7 +44,7 @@ def escolha_servico(): #Função para escolher o serviço
 def num_pagina(): # Função para escolher número de páginas e aplicar o desconto
     while True:
         try:
-            paginas = int(input('Entre com o número de páginas:'))
+            paginas = int(input('Entre com o número de páginas: '))
             break
         except ValueError:
             print('Número inválido.  Tente novamente...')
@@ -46,6 +52,7 @@ def num_pagina(): # Função para escolher número de páginas e aplicar o desco
     while paginas >= 20000: # Verifica se o número de páginas ultrapassou do limite
         print('Não aceitamos tantas páginas de uma vez.')
         print('Por favor, entre com o número de páginas novamente.')
+        print('')
         paginas = int(input('Entre com o número de páginas:'))
     
     if paginas < 20:
@@ -64,13 +71,14 @@ def num_pagina(): # Função para escolher número de páginas e aplicar o desco
         return val_descont
     
 def servico_extra(): # Função para adicionar serviço extra
+    print('')
     print('Deseja adicionar algum serviço?')
     print('1 - Encadernação Simples - R$ 15.00')
     print('2 - Encadernação Capa Dura - R$ 40.00')
     print('0 - Não desejo mais nada')
     while True:
         try:
-            adicional = int(input(''))
+            adicional = int(input('>>'))
             break
         except ValueError:
             print('Número inválido.  Tente novamente...')

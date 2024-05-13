@@ -3,7 +3,7 @@
 #Tamanho M de Cupuaçu (CP) custa 14 reais e o Açaí (AC) custa 16 reais;
 #Tamanho G de Cupuaçu (CP) custa 18 reais e o Açaí (AC) custa 20 reais;
 
-print('Bem-vindo(a) a loja de Gelados da Giovanna!')
+print('Bem-vindo(a) a loja de Gelados da Giovanna!') #Cria o menu
 print('-' * 20, 'Cardápio', '-' *21)
 print('-' * 51)
 print('-' * 3, '|', ' Tamanho ', '|', ' Cupuaçu (CP) ', '|', ' Açaí(AC) ', '|','-' * 3)
@@ -15,15 +15,17 @@ print('-' * 51)
 acumulador = 0 # Variável para armazenar valor da compra
 
 while True:
-    sabor = input('Entre com o sabor desejado: (CP/AC)') #Armazena o sabor desejado
+    sabor = input('Entre com o sabor desejado: (CP/AC) ') #Armazena o sabor desejado
     while sabor != 'CP' and sabor != 'AC': #Verifica se o sabor desejado é valido
         print ('Sabor inválido. Tente novamente!')
-        sabor = input('Entre com o sabor desejado: (CP/AC)')
+        print ('')
+        sabor = input('Entre com o sabor desejado: (CP/AC) ')
 
-    tamanho = input('Digite o tamanho desejado (P/M/G)') #Armazena o tamanho desejado
+    tamanho = input('Digite o tamanho desejado (P/M/G) ') #Armazena o tamanho desejado
     while tamanho != 'P' and tamanho != 'M' and tamanho != 'G': #Verifica se o tamanho desejado é valido
         print ('Tamanho inválido. Tente novamente!')
-        tamanho = input('Digite o tamanho desejado (P/M/G)')
+        print ('')
+        tamanho = input('Digite o tamanho desejado (P/M/G) ')
 
     if sabor == 'CP': #Verifica o sabor desejado
         if tamanho == 'P': # Verifica o tamanho
@@ -45,15 +47,17 @@ while True:
         else: # Verifica o tamanho
             print(f'Você pediu açaí no tamanho G: R$ 20.00')
             acumulador = acumulador + 20.00
-
-    perg = input('Deseja pedir mais alguma coisa? S/N')
+    
+    print ('')
+    perg = input('Deseja pedir mais alguma coisa? S/N ') #Verifica se o cliente deseja mais algo
     while perg != 'S' and perg != 'N':
         print('ERRO! Digite entre S ou N')
-        perg = input('Deseja pedir mais alguma coisa? S/N')
+        perg = input('Deseja pedir mais alguma coisa? S/N ')
 
     if perg == 'S':
         continue
     else:
         break
-
+    
+print ('')
 print(f'O valor total a ser pago: R$ {acumulador}')

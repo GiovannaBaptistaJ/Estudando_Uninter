@@ -18,9 +18,9 @@ def cadastrar_livro(id_livro): #Cadastro do livro
     print('-' * 17, ' MENU CADASTRAR LIVRO ', '-' * 17)
     livro['id'] = id_livro # Cria o ID do livro
     print(f'ID do livro: {id_livro}')
-    livro['nome'] = input('Por favor entre com o nome do livro:') #Armazena o nome do livro
-    livro['autor'] = input('Por favor entre com o autor do livro:') #Armazena o(a) autor(a) do livro
-    livro['editora']  = input('Por favor entre com a editora do livro:') #Armazena a editora do livro
+    livro['nome'] = input('Por favor entre com o nome do livro: ') #Armazena o nome do livro
+    livro['autor'] = input('Por favor entre com o autor do livro: ') #Armazena o(a) autor(a) do livro
+    livro['editora']  = input('Por favor entre com a editora do livro: ') #Armazena a editora do livro
     lista_livro.append(livro.copy()) #Adiciona o livro em uma lista
 
     print('-' * 58)
@@ -52,6 +52,7 @@ def consultar_livro(): #Consulta de livros
             print('')
 
        print('-' * 20)
+       consultar_livro()
 
     elif op == 2: #Consulta por ID
         perg = int(input('Digite o id do livro: ')) #Pergunta o ID desejado
@@ -73,6 +74,8 @@ def consultar_livro(): #Consulta de livros
             print("Livro com ID", perg, "não encontrado.")
             print('-' * 20)
 
+        consultar_livro()
+
     elif op == 3: #Consulta por autor
             perg = (input('Digite o autor do(s) livro(s): ')) #Pergunta o autor desejado
             print('-' * 20)
@@ -84,7 +87,7 @@ def consultar_livro(): #Consulta de livros
                     print(f'editora: {livro['editora']}')
                     print('')
             print('-' * 20)
-
+            consultar_livro()
     else: #Retorna ao menu
        print('Retornando ao menu...')
         
